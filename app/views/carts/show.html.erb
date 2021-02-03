@@ -4,9 +4,7 @@
     <h1>My Cart</h1>
   </header>
 <% if enhanced_cart.empty? %>
-  <%# <h2>Your cart is currently empty.</h2>
-  <p>Return to the home page to add items to your cart.</p>
-  <a href="/" class="btn btn-primary">Home</a> %>
+
   <div class="alert alert-danger" role="alert">
   <h2><strong>Your cart is empty.</strong> </h2>
   Return to the <a href="/" class="alert-link">Home Page</a> to add items.
@@ -60,6 +58,7 @@
       <% end %>
     </div>
   </div>
+  
   <%end%>
 
 </section>
