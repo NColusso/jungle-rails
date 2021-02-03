@@ -1,4 +1,9 @@
 class Admin::ProductsController < ApplicationController
+  @configuration = {
+  :publishable_key => ENV['secret_user'],
+  :secret_key      => ENV['secret_password']
+}
+http_basic_authenticate_with name: @configuration[:publishable_key], password: @configuration[:secret_key]
 
   def index
     @products = Product.order(id: :desc).all

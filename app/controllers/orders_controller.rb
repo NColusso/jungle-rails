@@ -1,7 +1,15 @@
+require "pp"
 class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    pp @order
+    @order_items =  @order.line_items
+
+     @order_items.each do |item|
+      puts "right after is the item"
+      pp item 
+     end 
   end
 
   def create
