@@ -15,7 +15,7 @@ RSpec.feature "Visitor can add item to cart", type: :feature, js:true do
       )
     end
   end
-  scenario "They click on a specific product and see their details" do
+  scenario "They can add an item to cart and cart total will increase by one" do
 
     visit root_path
 
