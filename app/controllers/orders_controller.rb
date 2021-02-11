@@ -74,11 +74,3 @@ class OrdersController < ApplicationController
 end
 
 
-# enhanced_cart.each do |entry|
-#   product = Product.find(entry[:product])
-#   quantity = entry[:quantity]
-#   puts product
-#   puts "below is quantity"
-#   puts quantity
-#   product.quantity -= quantity
-# end
