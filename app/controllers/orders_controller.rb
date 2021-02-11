@@ -1,6 +1,8 @@
 require "pp"
 class OrdersController < ApplicationController
 
+
+
   def show
     @order = Order.find(params[:id])
     pp @order
@@ -9,7 +11,7 @@ class OrdersController < ApplicationController
      @order_items.each do |item|
       puts "right after is the item"
       pp item 
-     end 
+    end 
   end
 
   def create
@@ -26,6 +28,8 @@ class OrdersController < ApplicationController
   rescue Stripe::CardError => e
     redirect_to cart_path, flash: { error: e.message }
   end
+
+  
 
   private
 
@@ -61,7 +65,20 @@ class OrdersController < ApplicationController
       )
     end
     order.save!
+
     order
   end
 
+ 
+
 end
+
+
+# enhanced_cart.each do |entry|
+#   product = Product.find(entry[:product])
+#   quantity = entry[:quantity]
+#   puts product
+#   puts "below is quantity"
+#   puts quantity
+#   product.quantity -= quantity
+# end
